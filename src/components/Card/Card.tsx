@@ -1,10 +1,11 @@
+import { ReactNode } from 'react';
 import { removeSpaces } from '../../utils/utils';
 import Progress from '../Progress/Progress';
 
 type cardProps = {
   title: string;
   progress: number;
-  children: JSX.Element;
+  children: ReactNode;
 };
 
 const Card = ({ title, progress, children }: cardProps) => {

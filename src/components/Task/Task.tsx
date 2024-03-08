@@ -1,10 +1,24 @@
+import styled from '@emotion/styled';
 import type { task } from '../../types/task';
 import { removeSpaces } from '../../utils/utils';
 import Icon from '../Icon/Icon';
 
+const Wrapper = styled('li')(
+  {
+    listStyle: 'none',
+  },
+  (props) => ({
+    padding: props.theme.sizes.space.card,
+    marginBottom: '8px',
+    '&:last-of-type': {
+      marginBottom: '0',
+    },
+  })
+);
+
 const Task = ({ description, value, checked }: task) => {
   return (
-    <div>
+    <Wrapper>
       <Icon name='check' />
       <input
         onChange={() => null}
@@ -15,7 +29,7 @@ const Task = ({ description, value, checked }: task) => {
         value={value}
       />
       <label htmlFor={removeSpaces(description)}>{description}</label>
-    </div>
+    </Wrapper>
   );
 };
 

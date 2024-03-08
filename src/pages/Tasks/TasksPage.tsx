@@ -6,7 +6,6 @@ import { api } from '../../api/api';
 import { removeSpaces } from '../../utils/utils';
 import { useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
-import Icon from '../../components/Icon/Icon';
 
 const fetcher = (url: string) => api.get(url).then((res) => res.data);
 
@@ -17,6 +16,9 @@ const TasksPage = () => {
   const Page = styled('div')`
     background-color: ${theme.colors.primary};
     color: ${theme.colors.font.primary};
+    padding: 45px;
+    display: flex;
+    justify-content: center;
   `;
 
   if (isLoading) return <Page>loading...</Page>;
@@ -27,15 +29,13 @@ const TasksPage = () => {
       <Card
         progress={15}
         title='Lodgify Grouped Tasks'>
-        <>
-          {data.map(({ tasks, name }) => (
-            <Group
-              name={name}
-              tasks={tasks}
-              key={removeSpaces(name)}
-            />
-          ))}
-        </>
+        {data.map(({ tasks, name }) => (
+          <Group
+            name={name}
+            tasks={tasks}
+            key={removeSpaces(name)}
+          />
+        ))}
       </Card>
     </Page>
   );

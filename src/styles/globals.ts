@@ -4,9 +4,16 @@ export const globalStyles: CSSObject = {
   '*': {
     'box-sizing': 'border-box',
   },
+  html: {
+    'font-family': `"Source Sans 3", sans-serif`,
+    'font-optical-sizing': 'auto',
+    'font-weight': '400',
+    'font-style': 'normal',
+  },
   body: {
     padding: 0,
     margin: 0,
+    fontSize: '16px',
   },
   ':root': {
     '--color-white': '#FFFFFF',

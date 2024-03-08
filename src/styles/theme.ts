@@ -3,6 +3,10 @@ import type { Theme } from '@emotion/react';
 export const theme: Theme = {
   colors: {
     primary: 'var(--color-primary)',
+    card: { primary: 'var(--color-white)', border: '#CCCCCC' },
+    group: {
+      border: '#DDDDDD',
+    },
     font: {
       primary: 'var(--color-black)',
       secondary: 'var(--color-grey)',
@@ -17,6 +21,7 @@ export const theme: Theme = {
       primary: 16,
     },
     space: {
+      card: 16,
       group: {
         header: 24,
         details: 8,

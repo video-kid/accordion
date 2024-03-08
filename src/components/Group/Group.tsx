@@ -1,5 +1,6 @@
 import type { task } from '../../types/task';
 import { removeSpaces } from '../../utils/utils';
+import Icon from '../Icon/Icon';
 import Task from '../Task/Task';
 
 type groupType = {
@@ -15,7 +16,10 @@ const Group = ({ name, tasks }: groupType) => {
           id={`group-${removeSpaces(name)}`}
           aria-expanded='true'
           aria-controls={removeSpaces(name)}>
-          [=]{name} Showv^
+          <Icon name='list' />
+          <Icon name='list-done' />
+          {name} Show
+          <Icon name='arrow-down' />
         </button>
       </h3>
       <div

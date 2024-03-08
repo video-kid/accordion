@@ -6,6 +6,7 @@ import { api } from '../../api/api';
 import { removeSpaces } from '../../utils/utils';
 import { useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
+import Icon from '../../components/Icon/Icon';
 
 const fetcher = (url: string) => api.get(url).then((res) => res.data);
 

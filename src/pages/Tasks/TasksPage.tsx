@@ -22,8 +22,6 @@ const TasksPage = () => {
 
   const progressBarValue = getProgressBarValue(data);
 
-  console.log(data);
-
   return (
     <Page>
       <Card

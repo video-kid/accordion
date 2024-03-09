@@ -1,33 +1,31 @@
-import useSWR from 'swr';
-import type { group } from '../../types/task';
 import Card from '../../components/Card/Card';
 import Group from '../../components/Group/Group';
-import { api } from '../../api/api';
 import { removeSpaces } from '../../utils/utils';
-import { useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
+import { TasksContext } from '../../context/tasksContext';
+import { useContext } from 'react';
+import { getProgressBarValue } from './utils';
 
-const fetcher = (url: string) => api.get(url).then((res) => res.data);
+const Page = styled('div')({}, (props) => ({
+  backgroundColor: props.theme.colors.primary,
+  color: props.theme.colors.font.primary,
+  padding: '45px',
+  display: 'flex',
+  justifyContent: 'center',
+}));
 
 const TasksPage = () => {
-  const { data, isLoading } = useSWR<Array<group>>('/', fetcher);
-  const theme = useTheme();
-
-  const Page = styled('div')`
-    background-color: ${theme.colors.primary};
-    color: ${theme.colors.font.primary};
-    padding: 45px;
-    display: flex;
-    justify-content: center;
-  `;
+  const { data, isLoading } = useContext(TasksContext);
 
   if (isLoading) return <Page>loading...</Page>;
   if (!data) return <Page>error</Page>;
 
+  const progressBarValue = getProgressBarValue(data);
+
   return (
     <Page>
       <Card
-        progress={75}
+        progress={progressBarValue}
         title='Lodgify Grouped Tasks'>
         {data.map(({ tasks, name }) => (
           <Group

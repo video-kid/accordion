@@ -11,11 +11,11 @@ type cardProps = {
 
 const Wrapper = styled('div')(
   {
-    'border-radius': '8px',
+    borderRadius: '8px',
     width: '820px',
   },
   (props) => ({
-    'background-color': props.theme.colors.card.primary,
+    backgroundColor: props.theme.colors.card.primary,
     border: `1px solid ${props.theme.colors.card.border}`,
     padding: props.theme.sizes.space.card,
   })
@@ -26,20 +26,20 @@ const Heading = styled('h1')(
     margin: 0,
     fontWeight: 700,
     lineHeight: '32px',
-    margingBottom: '8px',
   },
   (props) => ({
     fontSize: props.theme.sizes.font.header,
+    marginBottom: props.theme.sizes.space.card,
   })
 );
 
-const Header = styled('header')({}, (props) => ({
+const Header = styled('header')({
   padding: '32px 24px',
-}));
+});
 
 const Groups = styled('div')(
   {
-    'border-radius': '8px',
+    borderRadius: '8px',
   },
   (props) => ({
     border: `1px solid ${props.theme.colors.group.border}`,

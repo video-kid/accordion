@@ -24,8 +24,13 @@ const GroupHeader = styled('button')(
   })
 );
 
+const ListHeaderIcon = styled(Icon)({}, (props) => ({
+  marginRight: props.theme.sizes.space.group.header,
+}));
+
 const Text = styled('span')({}, (props) => ({
   fontSize: props.theme.sizes.font.subheader,
+  // color: props.theme.colors.font.selected,
 }));
 
 const Action = styled('div')(
@@ -33,16 +38,28 @@ const Action = styled('div')(
     lineHeight: '24px',
     height: '24px',
     display: 'flex',
+    cursor: 'pointer',
   },
   (props) => ({
     color: props.theme.colors.font.secondary,
   })
 );
 
-const Indicator = styled(Icon)({
+const Indicator = {
   height: '24px',
   width: '24px',
   padding: '7px',
+  marginLeft: '2px',
+  color: '#000000',
+};
+
+const Down = styled(Icon)({
+  ...Indicator,
+});
+
+const Up = styled(Icon)({
+  ...Indicator,
+  transform: 'rotate(180deg)',
 });
 
 const Wrapper = styled('div')({}, (props) => ({
@@ -61,13 +78,15 @@ const Group = ({ name, tasks }: groupType) => {
         aria-expanded='true'
         aria-controls={removeSpaces(name)}>
         <Text>
-          <Icon name='list' />
-          <Icon name='list-done' />
+          <ListHeaderIcon name='list' />
+          {/* <ListHeaderIcon name='list-done' /> */}
           {name} Show
         </Text>
         <Action>
-          Show/Hide
-          <Indicator name='arrow-down' />
+          {/* Show
+          <Down name='arrow-down' /> */}
+          Hide
+          <Up name='arrow-down' />
         </Action>
       </GroupHeader>
 

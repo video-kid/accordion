@@ -27,7 +27,7 @@ const TasksPage = () => {
   return (
     <Page>
       <Card
-        progress={15}
+        progress={75}
         title='Lodgify Grouped Tasks'>
         {data.map(({ tasks, name }) => (
           <Group

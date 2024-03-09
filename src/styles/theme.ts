@@ -36,5 +36,6 @@ export const theme: Theme = {
     font: '#E6FDF9',
     background: '#E6FDF9',
     indicator: 'var(--color-active)',
+    height: 24,
   },
 };

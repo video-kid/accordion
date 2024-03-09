@@ -22,6 +22,7 @@ const Icon = ({ name, ...props }: iconProps) => {
       height='16px'
       width='16px'
       xmlns='http://www.w3.org/2000/svg'
+      className='icon'
       {...props}>
       <g>
         <path

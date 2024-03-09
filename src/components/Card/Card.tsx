@@ -12,7 +12,7 @@ type cardProps = {
 const Wrapper = styled('div')(
   {
     borderRadius: '8px',
-    width: '820px',
+    width: 'min(100%, 820px)',
   },
   (props) => ({
     backgroundColor: props.theme.colors.card.primary,

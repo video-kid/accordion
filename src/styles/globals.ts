@@ -2,11 +2,18 @@ import type { CSSObject } from '@emotion/serialize';
 
 export const globalStyles: CSSObject = {
   '*': {
-    'box-sizing': 'border-box',
+    boxSizing: 'border-box',
+  },
+  html: {
+    fontFamily: `"Source Sans 3", sans-serif`,
+    fontOpticalSizing: 'auto',
+    fontWeight: '400',
+    fontStyle: 'normal',
   },
   body: {
     padding: 0,
     margin: 0,
+    fontSize: '16px',
   },
   ':root': {
     '--color-white': '#FFFFFF',

@@ -23,6 +23,7 @@ type groupType = {
 const Group = ({ name, tasks }: groupType) => {
   const [isHidden, setIsHidden] = useState<boolean>(true);
   const { getGroup } = useContext(TasksContext);
+
   const isAllGroupTasksComplete = getProgressBarValue(getGroup(name)) === 100;
 
   return (

@@ -83,7 +83,7 @@ const Group = ({ name, tasks }: groupType) => {
         <Text>
           <ListHeaderIcon name='list' />
           {/* <ListHeaderIcon name='list-done' /> */}
-          {name} Show
+          {name}
         </Text>
         <Action>
           {isHidden ? (
@@ -110,6 +110,7 @@ const Group = ({ name, tasks }: groupType) => {
             description={description}
             value={value}
             checked={checked}
+            groupName={name}
             key={removeSpaces(description)}
           />
         ))}

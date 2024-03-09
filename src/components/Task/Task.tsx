@@ -2,6 +2,8 @@ import styled from '@emotion/styled';
 import type { task } from '../../types/task';
 import { removeSpaces } from '../../utils/utils';
 import Icon from '../Icon/Icon';
+import { useContext } from 'react';
+import { TasksContext } from '../../context/tasksContext';
 
 const Wrapper = styled('li')(
   {
@@ -37,13 +39,18 @@ const Wrapper = styled('li')(
   })
 );
 
-const Task = ({ description, value, checked }: task) => {
+type taskProps = task & { groupName: string };
+
+const Task = ({ description, value, checked, groupName }: taskProps) => {
+  const { updateTask } = useContext(TasksContext);
+
+  const toggleTask = () => updateTask(groupName, description);
+
   return (
-    <Wrapper>
+    <Wrapper onChange={() => toggleTask()}>
       <input
         className='input'
-        onChange={() => null}
-        checked={checked}
+        defaultChecked={checked}
         type='checkbox'
         id={removeSpaces(description)}
         name={removeSpaces(description)}

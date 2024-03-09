@@ -3,22 +3,10 @@ import type { group } from '../types/task';
 import useSWR from 'swr';
 import { api } from '../api/api';
 import { getGroupByName, updatedTasks } from './utils';
+import { taskContextProps } from './types';
+import { taskContextInitValues } from './constants';
 
 const fetcher = (url: string) => api.get(url).then((res) => res.data);
-
-type taskContextProps = {
-  data: Array<group>;
-  isLoading: boolean;
-  updateTask: (groupName: string, description: string) => void;
-  getGroup: (name: string) => Array<group>;
-};
-
-const taskContextInitValues = {
-  data: [],
-  isLoading: true,
-  updateTask: () => null,
-  getGroup: () => [],
-};
 
 export const TasksContext = createContext<taskContextProps>(
   taskContextInitValues
@@ -39,4 +27,4 @@ const TasksProvider = ({ children }: { children: ReactNode }) => {
   );
 };
 
-export default TasksProvider;
+export { TasksProvider };

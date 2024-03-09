@@ -17,4 +17,4 @@ const Progress = ({ name, value }: progressProps) => {
   );
 };
 
-export default Progress;
+export { Progress };

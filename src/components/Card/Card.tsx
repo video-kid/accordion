@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import { removeSpaces } from '../../utils/utils';
-import Progress from '../Progress/Progress';
+import { Progress } from '../Progress/Progress';
 import { Groups, Header, Heading, Wrapper } from './card.styled';
 
 type cardProps = {
@@ -24,4 +24,4 @@ const Card = ({ title, progress, children }: cardProps) => {
   );
 };
 
-export default Card;
+export { Card };

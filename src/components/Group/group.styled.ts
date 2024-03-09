@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import Icon from '../Icon/Icon';
+import { Icon } from '../Icon/Icon';
 import { Theme } from '@emotion/react';
 
 export const GroupHeader = styled('button')(

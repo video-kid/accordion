@@ -24,4 +24,4 @@ const Icon = ({ name, ...props }: iconProps) => {
   );
 };
 
-export default Icon;
+export { Icon };

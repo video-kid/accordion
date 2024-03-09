@@ -27,4 +27,4 @@ const TasksProvider = ({ children }: { children: ReactNode }) => {
   );
 };
 
-export default TasksProvider;
+export { TasksProvider };

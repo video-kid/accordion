@@ -1,6 +1,6 @@
 import type { task } from '../../types/task';
 import { removeSpaces } from '../../utils/utils';
-import Icon from '../Icon/Icon';
+import { Icon } from '../Icon/Icon';
 import { useContext } from 'react';
 import { TasksContext } from '../../context/tasksContext';
 import { Label, Wrapper } from './task.styled';
@@ -32,4 +32,4 @@ const Task = ({ description, value, checked, groupName }: taskProps) => {
   );
 };
 
-export default Task;
+export { Task };

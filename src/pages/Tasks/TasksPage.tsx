@@ -1,5 +1,5 @@
-import Card from '../../components/Card/Card';
-import Group from '../../components/Group/Group';
+import { Card } from '../../components/Card/Card';
+import { Group } from '../../components/Group/Group';
 import { removeSpaces } from '../../utils/utils';
 import { TasksContext } from '../../context/tasksContext';
 import { useContext } from 'react';

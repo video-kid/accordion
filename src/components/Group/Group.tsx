@@ -1,6 +1,6 @@
 import type { task } from '../../types/task';
 import { removeSpaces } from '../../utils/utils';
-import Task from '../Task/Task';
+import { Task } from '../Task/Task';
 import { useContext, useState } from 'react';
 import { TasksContext } from '../../context/tasksContext';
 import { getProgressBarValue } from '../../pages/Tasks/utils';
@@ -73,4 +73,4 @@ const Group = ({ name, tasks }: groupType) => {
   );
 };
 
-export default Group;
+export { Group };

@@ -3,6 +3,7 @@ import type { task } from '../../types/task';
 import { removeSpaces } from '../../utils/utils';
 import Icon from '../Icon/Icon';
 import Task from '../Task/Task';
+import { useState } from 'react';
 
 type groupType = {
   name: string;
@@ -71,22 +72,31 @@ const TasksWrapper = styled('ul')({}, (props) => ({
 }));
 
 const Group = ({ name, tasks }: groupType) => {
+  const [isHidden, setIsHidden] = useState<boolean>(true);
   return (
     <Wrapper>
       <GroupHeader
         id={`group-${removeSpaces(name)}`}
         aria-expanded='true'
-        aria-controls={removeSpaces(name)}>
+        aria-controls={removeSpaces(name)}
+        onClick={() => setIsHidden(!isHidden)}>
         <Text>
           <ListHeaderIcon name='list' />
           {/* <ListHeaderIcon name='list-done' /> */}
           {name} Show
         </Text>
         <Action>
-          {/* Show
-          <Down name='arrow-down' /> */}
-          Hide
-          <Up name='arrow-down' />
+          {isHidden ? (
+            <>
+              Show
+              <Down name='arrow-down' />
+            </>
+          ) : (
+            <>
+              Hide
+              <Up name='arrow-down' />
+            </>
+          )}
         </Action>
       </GroupHeader>
 
@@ -94,7 +104,7 @@ const Group = ({ name, tasks }: groupType) => {
         id={removeSpaces(name)}
         role='region'
         aria-labelledby={`group-${removeSpaces(name)}`}
-        hidden={false}>
+        hidden={isHidden}>
         {tasks.map(({ description, value, checked }) => (
           <Task
             description={description}

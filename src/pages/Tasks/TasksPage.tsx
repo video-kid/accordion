@@ -12,6 +12,7 @@ const Page = styled('div')({}, (props) => ({
   padding: '45px',
   display: 'flex',
   justifyContent: 'center',
+  minHeight: '100vh',
 }));
 
 const TasksPage = () => {

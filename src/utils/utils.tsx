@@ -10,9 +10,9 @@ export const getCompletionPercentage = (
   checkedTasksArray: Array<number>
 ) => {
   const sumOfArrayElements = sumArrayElements(allTasksArray);
-  const normalisedArray = checkedTasksArray.map(
-    (value) => (value * 100) / sumOfArrayElements
+  const normalisedArray = sumArrayElements(
+    checkedTasksArray.map((value) => (value * 100) / sumOfArrayElements)
   );
 
-  return Math.round(sumArrayElements(normalisedArray));
+  return Math.round(normalisedArray);
 };

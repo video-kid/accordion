@@ -9,6 +9,7 @@ export const getProgressBarValue = (array: Array<group>) => {
   const checkedTasks = array.flatMap((item) =>
     item.tasks.filter((task) => task.checked)
   );
+
   return getCompletionPercentage(
     getTasksValues(allTasks),
     getTasksValues(checkedTasks)
